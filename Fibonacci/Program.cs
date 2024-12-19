@@ -6,7 +6,7 @@ Fib[0] = 0;
 Fib[1] = 1;
 int i = 2;
 string strFib="Suite de Fibonacci ";
-Console.WriteLine(Fib.Length);
+
 while (i <MaxFib)
 {
     
