@@ -6,37 +6,35 @@ using System.Threading.Tasks;
 
 namespace DelegueVoiture
 {
-    internal class Carwash : Voiture,IVoiture
+    internal class Carwash 
     {
         
-
-        public Carwash(string plaque) : base(plaque)
+        private void Finaliser(Voiture v)
         {
+            Console.WriteLine($"Je finalise la voiture : {v.Plaque}");
         }
 
-        public void Finaliser(Voiture v)
+        private void Laver(Voiture v)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Je lave la voiture : {v.Plaque}");
         }
 
-        public void Laver(Voiture v)
+        private void Preparer(Voiture v)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Preparer(Voiture v)
-        {
-            throw new NotImplementedException();
+            Console.WriteLine($"Je prépare la voiture : {v.Plaque}");
         }
 
         public void Secher(Voiture v)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Je sèche la voiture : {v.Plaque}");
         }
 
         public void Traiter(Voiture v)
         {
-            throw new NotImplementedException();
+            TraitementVoiture traitement = Preparer;
+            traitement += Laver;
+            traitement += Secher;
+            traitement += Finaliser;
         }
     }
 }
